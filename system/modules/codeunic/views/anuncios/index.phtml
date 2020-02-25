@@ -1,0 +1,22 @@
+<?php foreach ($this->_listadoAnuncios['anuncios'] as $key => $row): ?>
+    <div class="ALateral__container">
+        <div class="ALateral__foto">
+            <img src="<?= $row->getFoto(); ?>" alt="<?= $row->getReferencia(); ?>" class="ALateral__img">
+        </div>
+        <?php if ($row->getFk_estado() == 'Adoptado'): ?>
+            <div class="ALateral__etiqueta--adoptado"><b>Estado:</b> <?= $row->getFk_estado() ?></div>
+        <?php elseif ($row->getFk_estado() == 'Vagabundo'): ?>
+            <div class="ALateral__etiqueta--vagabundo"><b>Estado:</b> <?= $row->getFk_estado() ?></div>
+        <?php else: ?>
+            <div class="ALateral__etiqueta--renuncia"><b>Estado: </b><?= $row->getFk_estado() ?></div>
+        <?php endif; ?>
+        <div class="ALateral__referencia"><b>Referencia: </b><?= $row->getReferencia(); ?></div>
+        <div class="ALateral__fecha"><b>Fecha entrada: </b><?= $row->getFecha_entrada(); ?></div>
+        <div class="ALateral__tipo"><b>Tipo: </b><?= $row->getTipo(); ?></div>
+        <div class="ALateral__raza"><b>Raza: </b><?= $row->getRaza(); ?></div>
+        <div class="ALateral__descripcion"><b>Descripción: </b><?= $row->getDescripcion(); ?></div>
+        <button type="button" class="ALateral__button ALateral__aceptar ALateral__disabled" disabled>Aceptar <i class="fa fa-check"></i></button>
+        <button type="button" class="ALateral__button ALateral__rechazar" data-code="<?= $row->getReferencia();?>">Rechazar <i class="fa fa-ban"></i></button>
+    </div>
+
+<?php endforeach; ?>

@@ -1,0 +1,21 @@
+.publicar-anuncio-file {
+  display: grid;
+  grid-template-columns: 182px 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+  border: 1px solid gainsboro;
+  @include hover-focus-active() {
+    background-color: darken(#FFF, 5%);
+  }
+  > * {
+    margin: 0;
+  }
+  .c-File-upload__content {
+    margin: 0;
+  }
+  div:last-child {
+    p {
+      margin: 0;
+    }
+  }
+}

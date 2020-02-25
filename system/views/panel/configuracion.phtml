@@ -1,0 +1,102 @@
+<div class="Grilla">
+    <div class="Grilla__xs--12 Grilla__sm--6">
+        <div class="c-Widget">
+            <div class="c-Widget__header">
+                <h3 class="c-Widget__title">Cambia tu contraseña</h3>
+            </div>
+            <div class="c-Widget__body">
+                <div class="c-Widget__container">
+                    <form class="Form" id="form-change-password">
+                        <div class="Form__group">
+                            <label>Antigua contraseña:</label>
+                            <input type="password" name="password-old" class="Form__control" placeholder="Antigua Contraseña">
+                        </div>
+                        <div class="Form__group">
+                            <label>Nueva contraseña:</label>
+                            <input type="password" name="password-new" class="Form__control" placeholder="Nueva Contraseña">
+                        </div>
+                        <div class="Form__group float-right">
+                            <button class="Boton--raised-cyan Boton">Cambiar contraseña</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Grilla__xs--12 Grilla__sm--6">
+        <div class="c-Widget">
+            <div class="c-Widget__header">
+                <h3 class="c-Widget__title">Biografia</h3>
+            </div>
+            <div class="c-Widget__body">
+                <div class="c-Widget__container">
+                    <form class="Form" id="form-save-biografia">
+                        <div class="Form__group">
+                            <textarea name="biografia" id="" cols="30" rows="3" class="Form__control" placeholder="Cuentanos algo sobre ti" style="height: 136px;"><?= $this->_social->getBiografia(); ?></textarea>
+                        </div>
+                        <div class="Form__group float-right">
+                            <button class="Boton Boton--raised-cyan">Guardar Biografia</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Grilla__xs--12">
+        <div class="c-Widget">
+            <div class="c-Widget__header">
+                <h3 class="c-Widget__title">Redes Sociales</h3>
+            </div>
+            <div class="c-Widget__body">
+                <div class="c-Widget__container">
+                    <form class="Form" id="form-save-social">
+                        <div class="Form__group">
+                            <label>Facebook</label>
+                            <input type="text" class="Form__control" name="facebook" placeholder="Facebook" id="" value="<?= $this->_social->getSocialFacebook(); ?>">
+                        </div>
+                        <div class="Form__group">
+                            <label>Youtube</label>
+                            <input type="text" class="Form__control" name="youtube" value="<?= $this->_social->getSocialYoutube(); ?>" placeholder="Youtube" id="">
+                        </div>
+                        <div class="Form__group">
+                            <label>Twitter</label>
+                            <input value="<?= $this->_social->getSocialTwitter(); ?>" type="text" class="Form__control" name="twitter" placeholder="Twitter" id="">
+                        </div>
+                        <div class="Form__group">
+                            <label>Google Plus</label>
+                            <input type="text" class="Form__control" name="googlePlus" placeholder="Google Plus" id="" value="<?= $this->_social->getSocialGooglePlus(); ?>">
+                        </div>
+                        <div class="Form__group">
+                            <label>Instagram</label>
+                            <input type="text" class="Form__control" name="instagram" placeholder="Instagram" value="<?= $this->_social->getSocialInstagram(); ?>" id="">
+                        </div>
+                        <div class="Form__group float-right">
+                            <button class="Boton Boton--raised-cyan">Guardar redes sociales</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Grilla__xs--12 Grilla__sm-6">
+        <div class="c-Widget">
+            <div class="c-Widget__header">
+                <h3 class="c-Widget__title">Tus tarifas</h3>
+            </div>
+            <div class="c-Widget__body">
+                <div class="c-Widget__container">
+                    <form action="" class="Form" id="form-guardarTarifa">
+                        <ul class="L-Lista">
+                            <?php
+                                foreach ($this->_tarifas??array() as $key => $row):
+                                    $this->renderizarInclude('includes/components/tarifasTratamiento', true, array('row' => $row));
+                                endforeach;
+                            ?>
+                        </ul>
+                        <button class="Boton--raised-cyan Boton">Guardar tarifas</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

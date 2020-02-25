@@ -1,0 +1,14 @@
+<div class="m-b-20">
+    <div class="Grilla">
+        <?php foreach ($this->_listadoAnimales as $key => $row): ?>
+            <div class="Grilla__xs--12 Grilla__sm--6 Grilla__md--4 Grilla__lg--4 Grilla__xl--3 Grilla__xxl--3">
+                <?php $this->renderizarInclude('includes/components/anuncio', true, array('row' => $row)); ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <?php
+    if (isset($this->_paginator)) {
+        echo $this->_paginator;
+    }
+    ?>
+</div>

@@ -1,0 +1,119 @@
+.ALateral__container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin-bottom: 10px;
+  border-top-right-radius: 12px;
+  grid-template-rows: 25px 25px 25px 1fr;
+  min-height: 219px;
+  position: relative;
+  @include hover-focus-active {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.ALateral__foto {
+  grid-column: 1/4;
+  grid-row: 1/4;
+  height: 175px;
+}
+
+.ALateral__img {
+  width: 100%;
+  height: 100%;
+}
+
+.ALateral__etiqueta {
+  grid-column: 1/4;
+  width: 100%;
+  min-height: 25px;
+  position: absolute;
+  top: 175px;
+  padding-left: 10px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  @include m(adoptado) {
+    @extend .ALateral__etiqueta;
+    color: white;
+    background-color: #005766;
+  }
+  @include m(vagabundo) {
+    @extend .ALateral__etiqueta;
+    background-color: yellow;
+  }
+  @include m(renuncia) {
+    @extend .ALateral__etiqueta;
+    background-color: darkorange;
+    color: white;
+  }
+}
+
+.ALateral__referencia {
+  grid-column: 4/10;
+  grid-row: 1/2;
+  padding-left: 10px;
+}
+
+.ALateral__fecha {
+  grid-column: 4/10;
+  grid-row: 2/3;
+  padding-left: 10px;
+}
+
+.ALateral__tipo {
+  grid-column: 4/6;
+  grid-row: 3/4;
+  padding-left: 10px;
+}
+
+.ALateral__raza {
+  grid-column: 6/13;
+  grid-row: 3/4;
+}
+
+.ALateral__descripcion {
+  padding-left: 10px;
+  grid-column: 4/13;
+  grid-row: 4/7;
+}
+
+.ALateral__aceptar {
+  grid-column: 11/12;
+  grid-row: 1/3;
+  margin-right: 10px;
+  @include hover-focus-active{
+    background-color: green;
+    color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+.ALateral__rechazar {
+  grid-column: 12/13;
+  grid-row: 1/3;
+  border-top-right-radius: 12px;
+  @include hover-focus-active{
+    background-color: red;
+    color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+.ALateral__disabled{
+  cursor:not-allowed !important;
+}
+.ALateral__button {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  padding-left:20px !important;
+  padding-right: 20px !important;
+}

@@ -1,0 +1,112 @@
+<?php
+ORM::select('*');
+ORM::from('usuarios');
+ORM::where('role', 'Perrera');
+ORM::order_by('RAND()');
+ORM::limit(3);
+$get = ORM::build();
+$result = $get->result();
+?>
+<footer class="footer">
+    <div class="footer__row Grilla">
+        <div class="Grilla__sm--3 Grilla__md-2 Grilla__lg--2 Grilla__xs--12">
+            <ul class="Lista">
+                <li class="Lista__title"><h5>Perreras</h5></li>
+                <?php foreach ($result as $key => $row): ?>
+                    <?php
+                    $user = Ayuda::urlAmigable($row->usuario);
+                    ?>
+                    <li class="Lista__item">
+                        <a href="<?= base_url("profesional/$user-$row->id/") ?>" class="Lista__link"><?= $row->usuario ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="Grilla__sm--3 Grilla__md-2 Grilla__lg--2 Grilla__xs--12">
+            <ul class="Lista">
+                <li class="Lista__title"><h5>Perreras</h5></li>
+                <?php foreach ($result as $key => $row): ?>
+                    <?php
+                    $user = Ayuda::urlAmigable($row->usuario);
+                    ?>
+                    <li class="Lista__item">
+                        <a href="<?= base_url("profesional/$user-$row->id/") ?>" class="Lista__link"><?= $row->usuario ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="Grilla__sm--3 Grilla__md-2 Grilla__lg--2 Grilla__xs--12">
+            <ul class="Lista">
+                <li class="Lista__title"><h5>Perreras</h5></li>
+                <?php foreach ($result as $key => $row): ?>
+                    <?php
+                    $user = Ayuda::urlAmigable($row->usuario);
+                    ?>
+                    <li class="Lista__item">
+                        <a href="<?= base_url("profesional/$user-$row->id/") ?>" class="Lista__link"><?= $row->usuario ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="Grilla__sm--3 Grilla__md-2 Grilla__lg--2 Grilla__xs--12">
+            <ul class="Lista">
+                <li class="Lista__title"><h5>Perreras</h5></li>
+                <?php foreach ($result as $key => $row): ?>
+                    <?php
+                    $user = Ayuda::urlAmigable($row->usuario);
+                    ?>
+                    <li class="Lista__item">
+                        <a href="<?= base_url("profesional/$user-$row->id/") ?>" class="Lista__link"><?= $row->usuario ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="Grilla__sm--3 Grilla__md-2 Grilla__lg--2 Grilla__xs--12">
+            <ul class="Lista">
+                <li class="Lista__title"><h5>Perreras</h5></li>
+                <?php foreach ($result as $key => $row): ?>
+                    <?php
+                    $user = Ayuda::urlAmigable($row->usuario);
+                    ?>
+                    <li class="Lista__item">
+                        <a href="<?= base_url("profesional/$user-$row->id/") ?>" class="Lista__link"><?= $row->usuario ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="Grilla__sm--3 Grilla__md-2 Grilla__lg--2 Grilla__xs--12">
+            <ul class="Lista">
+                <li class="Lista__title"><h5>Perreras</h5></li>
+                <?php foreach ($result as $key => $row): ?>
+                    <?php
+                    $user = Ayuda::urlAmigable($row->usuario);
+                    ?>
+                    <li class="Lista__item">
+                        <a href="<?= base_url("profesional/$user-$row->id/") ?>" class="Lista__link"><?= $row->usuario ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__row text-center">
+        <ul class="Lista Lista--horizontal Lista--center">
+            <li class="Lista__item">
+                <a href="<?= base_url(); ?>" class="Lista__link">Pagina principal </a>
+            </li>
+            <li class="Lista__item">
+                <a href="" class="Lista__link">Listado de anuncios</a>
+            </li>
+            <li class="Lista__item">
+                <a href="<?= base_url('contacto/'); ?>" class="Lista__link">Contactar</a>
+            </li>
+            <li class="Lista__item">
+                <a href="" class="Lista__link">Opiniones</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer__row">
+        <p class="text-center">
+            <a href="">takeourpets</a> &copy; 2017
+        </p>
+    </div>
+</footer>

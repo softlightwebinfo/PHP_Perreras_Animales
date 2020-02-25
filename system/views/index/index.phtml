@@ -1,0 +1,50 @@
+<div class="Page">
+    <div class="Page__container">
+        <h1 class="text-center h-titulo">Bienvenidos a adopción de animales</h1>
+        <p class="h-descripcion Page__description">
+            Mucha gente busca de cada vez más adoptar animales, publicar anuncios sobre animales abandonados y sobretodo
+            compartir sus mascotas. <br>
+            En adopción de animales podrás buscar todos los animales preparados para ser adoptados y llevados a un
+            hogar.
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="Grilla">
+        <div class="Bloque Grilla__md--3 Grilla__xs--12 Grilla__sm--6 Grilla__lg--3">
+            <img class="Bloque__icono" src="public/img/potetes.png" alt="">
+            <span class="Bloque__titulo">
+                    Perreras municipales
+            </span>
+        </div>
+        <div class="Bloque Grilla__md--3 Grilla__xs--12 Grilla__sm--6 Grilla__lg--3">
+            <img class="Bloque__icono" src="system/src/libs/codeunic/assets/icons/people.svg" alt="">
+            <span class="Bloque__titulo">
+                    Refugio de animales
+            </span>
+        </div>
+        <div class="Bloque Grilla__md--3 Grilla__xs--12 Grilla__sm--6 Grilla__lg--3">
+            <img class="Bloque__icono" src="system/src/libs/codeunic/assets/icons/asociaciones.svg" alt="">
+            <span class="Bloque__titulo">
+                    Asociaciones de animales
+            </span>
+        </div>
+        <div class="Bloque Grilla__md--3 Grilla__xs--12 Grilla__sm--6 Grilla__lg--3">
+            <img class="Bloque__icono" src="public/img/perretes.png" alt="">
+            <span class="Bloque__titulo">
+                    Animales abandonados
+            </span>
+        </div>
+    </div>
+    <h2 class="text-center h-titulo">Últimos anuncios publicados</h2>
+    <div class="anuncios Grilla">
+        <?php foreach ($this->_listadoAnuncios as $key => $row): ?>
+            <div class="Grilla__md--4 Grilla__xs--12 Grilla__sm--6 Grilla__lg--4 Grilla__xl--3 Grilla__xxl--3">
+                <?php $this->renderizarInclude('includes/components/anuncio', true, array('row' => $row)); ?>
+            </div>
+        <?php endforeach; ?>
+        <div class=" Grilla__item Grilla__item--12 text-center">
+            <a href="<?= base_url('anuncios/'); ?>" class="Button Button--neutral Button--gran">Ver más anuncios</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<li class="L-Lista__item <?= $class ?? ''; ?>">
+    <label>
+        <?= $row->getTarifa(); ?>
+        <input
+                type="text"
+                name="precio"
+                data-id="<?= $row->getId(); ?>"
+                data-tarifa="<?= $row->getTarifa(); ?>"
+                placeholder="Precio"
+                value="<?= $row->getPrecio(); ?>"
+                class="Form__control"
+        />
+    </label>
+</li>

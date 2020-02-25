@@ -1,0 +1,98 @@
+<div class="">
+    <div class="StoreFront">
+        <div class="StoreFront__header"
+             style='background: transparent url("<?= imageUrl("profile-bg.jpg") ?>") repeat scroll center center/cover'>
+            <div class="StoreFront__info">
+                <img class="StoreFront__image" src="<?= imageUrl('avatar.jpg') ?>"/>
+                <h4 class="StoreFront__title"><b><?= strtoupper($this->_empresa->getUsuario()); ?></b></h4>
+                <span class="StoreFront__subtitle"><?= $this->_empresa->getRole(); ?></span>
+                <div class="StoreFront__buttons">
+                    <button class="Boton Boton--default">Seguir</button>
+                    <button class="Boton Boton--default">Enviar mensaje</button>
+                </div>
+                <p class="StoreFront__socials">
+                    <?php if ($this->_datos->getSocialTwitter() !== ""): ?>
+                        <a title="Twitter" target="_twitter" href="<?= $this->_datos->getSocialTwitter(); ?>"
+                           class="StoreFront__link"><i
+                                    class="fa fa-twitter StoreFront__icon"></i></a>
+                    <?php endif; ?>
+                    <?php if ($this->_datos->getSocialFacebook() !== ""): ?>
+                        <a title="Facebook" target="_facebook" href="<?= $this->_datos->getSocialFacebook(); ?>"
+                           class="StoreFront__link"><i
+                                    class="fa fa-facebook StoreFront__icon"></i></a>
+                    <?php endif; ?>
+                    <?php if ($this->_datos->getSocialGooglePlus() !== ""): ?>
+                        <a title="Google-plus" target="_googlePlus" href="<?= $this->_datos->getSocialGooglePlus(); ?>"
+                           class="StoreFront__link"><i
+                                    class="fa fa-google-plus StoreFront__icon"></i></a>
+                    <?php endif; ?>
+                    <?php if ($this->_datos->getSocialInstagram() !== ""): ?>
+                        <a title="Instagram" target="_instagram" href="<?= $this->_datos->getSocialInstagram(); ?>"
+                           class="StoreFront__link"><i
+                                    class="fa fa-instagram StoreFront__icon"></i></a>
+                    <?php endif; ?>
+                    <?php if ($this->_datos->getSocialYoutube() !== ""): ?>
+                        <a title="Youtube" target="_youtube" href="<?= $this->_datos->getSocialYoutube(); ?>"
+                           class="StoreFront__link"><i
+                                    class="fa fa-youtube StoreFront__icon"></i></a>
+                    <?php endif; ?>
+                </p>
+            </div>
+        </div>
+        <div class="StoreFront__sub-header">
+            <ul class="StoreFront__menu">
+                <li class="StoreFront__item StoreFront__item--active">
+                    <a href="mail-inbox.html" class="StoreFront__link">
+                        <i class="StoreFront__icon fa fa-home"></i>
+                        <span>Pagina Principal</span>
+                    </a>
+                </li>
+                <li class="StoreFront__item">
+                    <a href="mail-inbox.html" class="StoreFront__link">
+                        <i class="StoreFront__icon fa fa-envelope"></i>
+                        <span>Principal</span>
+                    </a>
+                </li>
+                <li class="StoreFront__item">
+                    <a href="mail-inbox.html" class="StoreFront__link">
+                        <i class="StoreFront__icon fa fa-envelope"></i>
+                        <span>Principal</span>
+                    </a>
+                </li>
+                <li class="StoreFront__item">
+                    <a href="mail-inbox.html" class="StoreFront__link">
+                        <i class="StoreFront__icon fa fa-envelope"></i>
+                        <span>Principal</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="StoreFront__body">
+            <div class="Grilla">
+                <div class="Grilla__xs--12 Grilla__sm--3 Grilla__md--3">
+                    <div class="Widget">
+                        <div class="Widget__title">Quienes somos</div>
+                        <div class="Widget__body">
+                            <p><?= $this->_datos->getBiografia(); ?></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="Grilla__xs--12 Grilla__sm--9 Grilla__md--9">
+                    <h2 class="StoreFront__titulado">Listado de Animales</h2>
+                    <div class="Grilla">
+                        <?php foreach ($this->_listadoAnuncios as $key => $row): ?>
+                            <div class="Grilla__md--4 Grilla__xs--12 Grilla__sm--6 Grilla__lg--4 Grilla__xl--4 Grilla__xxl--3">
+                                <?php $this->renderizarInclude('includes/components/anuncio', true, array('row' => $row)); ?>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php
+                    if (isset($this->_paginator)) {
+                        echo $this->_paginator;
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

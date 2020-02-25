@@ -1,0 +1,95 @@
+<div class="Detalle">
+    <div class="Detalle__header">
+        <div class="Detalle__box">
+            <div class="Detalle__box-container">
+                <img class="Detalle__box-logo" src="<?= imageUrl('logo-profesional.png'); ?>"/>
+                <span class="Detalle__box-name">
+                   <?= $this->_usuario->getUsuario(); ?>
+                </span>
+                <span class="Detalle__box-dato">
+                    <i class="fa fa-map"></i> Inca, baleares
+                </span>
+                <span class="Detalle__box-dato">
+                    <i class="fa fa-map-marker"></i> Carrer fernando domingez
+                </span>
+                <span class="Detalle__box-dato">
+                    <i class="fa fa-address-card-o"></i> Tiene <?= $this->_animalesCount; ?> animales
+                </span>
+                <div class="Detalle__separation"></div>
+                <button class="Btn Btn--info Btn--block">Contactar</button>
+            </div>
+        </div>
+        <div>
+            <div class="Detalle__image" style="background-image: url(<?= $this->_animal->getFoto(); ?>)"></div>
+            <div class="Detalle__image" style="background-image: url(<?= $this->_animal->getFoto(); ?>"></div>
+        </div>
+    </div>
+    <div class="Detalle__body">
+        <div class="Grilla">
+            <div class="Grilla__xs--12 Grilla__sm--12 Grilla__md--10 Grilla__lg--8 Grilla__xl--8 Grilla__xxl--9">
+                <h2 class="Detalle__title"><?= ucfirst($this->_animal->getRaza()); ?></h2>
+                <h4 class="Detalle__subtitle"><?= ucwords("{$this->_animal->getTipo()} {$this->_animal->getRaza()}") ?></h4>
+                <div class="Detalle__fecha">
+                    <i>Fecha de modificación: </i>
+                    <i><?= $this->_animal->getFecha_modificacion(true); ?></i>
+                </div>
+                <div class="Detalle-row">
+                    <h5 class="Detalle-row__title">Descripción</h5>
+                    <p class="Detalle-row__description Detalle__description">
+                        <?= $this->_animal->getDescripcion(); ?>
+                    </p>
+                </div>
+                <div class="Detalle-row">
+                    <h5 class="Detalle-row__title">Caracteristicas</h5>
+                    <div class="Detalle__caracteristicas">
+                        <span class="Etiq">Mascle</span>
+                        <span class="Etiq">Gros</span>
+                        <span class="Etiq">Adult</span>
+                    </div>
+                </div>
+                <div class="Detalle-row">
+                    <h5 class="Detalle-row__title">Procedimiento/Tractamiento</h5>
+                    <div class="Detalle__caracteristicas">
+                        <ul class="Lists">
+                            <li class="Lists__item">
+                                <span>
+                                    Microxip identificatiu i Alta COVIB**
+                                </span>
+                                <span>15€</span>
+                            </li>
+                            <li class="Lists__item">
+                                <span>
+                                   Alta COVIB (Col·legi Veterinaris)
+                                </span>
+                                <span>0€</span>
+                            </li>
+                            <li class="Lists__item">
+                                <span>
+                                   Canvi/Modificació Propietari
+                                </span>
+                                <span>6€</span>
+                            </li>
+                            <li class="Lists__item">
+                                <span>
+                                   Vacuna Tretravalent, Moixos RCP+Leucèmia
+                                </span>
+                                <span>20€</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="Grilla__xs--12 Grilla__sm--12 Grilla__md--3 Grilla__lg--4 Grilla__xl--4 Grilla__xxl--3">
+                <?php
+                //                $this->renderizarController('usuario/login')
+                ?>
+                <?php foreach ($this->_animalesSimilares as $key => $row): ?>
+                    <?php $this->renderizarInclude('includes/components/anuncio', true, array('row' => $row)); ?>
+                <?php endforeach; ?>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="initMap"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL3cL5h66Mg0xzHfu7Aajuj7crrxmHhR0"></script>

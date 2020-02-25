@@ -1,0 +1,32 @@
+.Header + main {
+  margin-top: 50px;
+}
+
+.container-init {
+  padding-top: 20px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  &--default {
+    @extend .container-init;
+    display: block;
+  }
+}
+
+xmp {
+  background-color: #F1F1F1;
+  border: 1px solid #000000;
+  padding: 10px;
+  overflow: auto;
+  margin: 7px;
+  color: #0150c7;
+}
+.page-full{
+  background-size: cover;
+  background-position: top center;
+  background-color: #00BCD4;
+  padding-left: 0;
+  max-width: 360px;
+  margin: 5% auto;
+  overflow-x: hidden
+}

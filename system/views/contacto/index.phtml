@@ -1,0 +1,46 @@
+<div class="Slider--estatico">
+    <img src="<?= imageUrl('mountains1.jpg') ?>" class="Slider__img" alt="slider-contacto" title="slider-contacto">
+</div>
+<div class="container container-init">
+    <div class="Page">
+        <div class="Page__container">
+            <h1 class="text-center h-titulo">¿Tiene alguna duda? Contacte con nosotros</h1>
+        </div>
+    </div>
+    <div class="Grilla">
+        <div class="Grilla__xs--12 Grilla__sm--6 Grilla__md--6 Grilla__lg--6 Grilla__xl--6 Grilla__xxl--6 Grid Grid--final">
+            <img src="<?= imageUrl('contacto.png') ?>" style="width:300px;" alt="contacto imagen" title="contacto imagen">
+        </div>
+        <div class="Grilla__xs--12 Grilla__sm--12 Grilla__md--6 Grilla__lg--6 Grilla__xl--6 Grilla__xxl--6">
+            <div class="Panel">
+                <form class="Form" method="post" enctype="multipart/form-data" id="form-contacto">
+                    <div class="Form__group">
+                        <input type="text" class="Form__control" name="name" placeholder="Nombre y apellidos">
+                    </div>
+                    <div class="Form__group">
+                        <select class="Form__control" id="provincias" name="provincia" tabindex="4">
+                            <option value="-1">Selecciona una provincia</option>
+                            <?php foreach ($this->_listadoProvincias as $key => $row): ?>
+                                <option value="<?= $row->getId(); ?>"><?= $row->getProvincia(); ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="Form__group">
+                        <select class="Form__control" id="municipios" name="municipio" tabindex="4">
+                            <option value="-1">Selecciona un municipio</option>
+                        </select>
+                    </div>
+                    <div class="Form__group">
+                        <input type="email" name="email" class="Form__control" placeholder="Correo electronico">
+                    </div>
+                    <div class="Form__group">
+                        <textarea name="mensaje" class="Form__control" id="" rows="10" placeholder="Mensaje"></textarea>
+                    </div>
+                    <div class="Panel__footer Panel__footer--right">
+                        <input type="submit" class="btn btn-info">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

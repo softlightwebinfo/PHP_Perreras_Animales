@@ -1,0 +1,52 @@
+<div class="Boxes">
+    <div class="Boxes__top"></div>
+    <div class="Boxes__body">
+        <div class="Boxes__diagrama"></div>
+        <h1 class="Boxes__title">
+            <span class="Boxes__subtitle">Perreras</span>
+            Registro
+            <span class="Boxes__subtitle Boxes__subtitle--msg">Crea una cuenta para tener un mejor servicio</span>
+        </h1>
+        <div class="Boxes__content">
+            <form action="" enctype="multipart/form-data" id="form-registro">
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-user"></span>
+                        <input type="text" autocomplete="off" class="Form__control--modern" name="username" placeholder="Nombre y apellidos" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-envelope"></span>
+                        <input type="text" autocomplete="off" class="Form__control--modern" name="email" placeholder="Correo electronico" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-lock"></span>
+                        <input type="password" class="Form__control--modern" name="password" placeholder="Contraseña" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-lock"></span>
+                        <input type="password" class="Form__control--modern" name="repetirPassword" placeholder="Repetir contraseña" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group">
+                    <span class="Checkbox">
+                        <input type="checkbox" class="Checkbox__item" name="options" id="checkbox-1" value="on">
+                        <label class="Checkbox__label" for="checkbox-1">
+                            <span class="Checkbox__aux"></span>
+                            <span class="Checkbox__title">He leido y acepto los <a href="">terminos de uso.</a></span>
+                        </label>
+                    </span>
+                </div>
+                <div class="Form__group text-center">
+                    <button type="submit" class="Boton Boton--raised-cyan">Crear cuenta</button>
+                </div>
+            </form>
+            <a class="Boxes__link" href="<?= base_url('usuario/login/') ?>">Tienes una cuenta?</a>
+        </div>
+    </div>
+</div>

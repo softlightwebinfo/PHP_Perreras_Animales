@@ -1,0 +1,32 @@
+<div class="Boxes">
+    <div class="Boxes__top"></div>
+    <div class="Boxes__body">
+        <div class="Boxes__diagrama"></div>
+        <h1 class="Boxes__title">
+            <span class="Boxes__subtitle">Perreras</span>
+            Login
+            <span class="Boxes__subtitle Boxes__subtitle--msg">Inicia sessión para poder entrar a tu perfil</span>
+        </h1>
+        <div class="Boxes__content">
+            <form action="" enctype="multipart/form-data" id="form-login">
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-user"></span>
+                        <input type="text" autocomplete="off" class="Form__control--modern" name="email" placeholder="Correo electronico" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-lock"></span>
+                        <input type="password" class="Form__control--modern" name="password" placeholder="Contraseña" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group text-center">
+                    <button type="submit" class="Boton Boton--raised-cyan">Entrar</button>
+                    <a href="<?= base_url('usuario/registro/') ?>" class="Boton">Registrar</a>
+                </div>
+            </form>
+            <a class="Boxes__link" href="<?= base_url('usuario/recuperar-contrasena/') ?>">Recuperar contraseña?</a>
+        </div>
+    </div>
+</div>

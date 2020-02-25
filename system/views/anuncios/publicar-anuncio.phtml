@@ -1,0 +1,76 @@
+<div class="Slider--estatico">
+    <img src="<?= imageUrl('mountains1.jpg') ?>" class="Slider__img" alt="slider-contacto" title="slider-contacto">
+</div>
+<div class="container container-init">
+    <div class="Page">
+        <div class="Page__container">
+            <h1 class="text-center h-titulo">Publique su anuncio</h1>
+        </div>
+    </div>
+    <div class="Grilla">
+        <div class="Grilla__xs--12 Grilla__sm--12 Grilla__md--12 Grilla__lg--12 Grilla__xl--12 Grilla__xxl--12">
+            <div class="Panel">
+                <form class="Form Grilla" method="post" enctype="multipart/form-data" id="form_anuncio">
+                    <div class="Grilla__xs--12 Grilla__sm--6 Grilla__md--6 Grilla__lg--6 Grilla__xl--6 Grilla__xxl--6">
+                        <div>
+                            <div class="publicar-anuncio-file">
+                                <div class="c-File-upload">
+                                    <label class="c-File-upload__content">
+                                        <div class="c-File-upload__body">
+                                            <i class="fa fa-camera"></i>
+                                        </div>
+                                        <input class="c-File-upload__file" type="file" name="img"/>
+                                    </label>
+                                </div>
+                                <div>
+                                    <h4>Sube una foto</h4>
+                                    <p>Selecciona una foto de tu dispositivo</p>
+                                    <p>Selecciona una foto de tu dispositivo</p>
+                                    <p>Selecciona una foto de tu dispositivo</p>
+                                    <p>Selecciona una foto de tu dispositivo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="form_campo__preview"></div>
+                    </div>
+                    <div class="Grilla__xs--12 Grilla__sm--12 Grilla__md--6 Grilla__lg--6 Grilla__xl--6 Grilla__xxl--6 __FormAnuncio">
+                        <div class="Form__group">
+                            <input type="text" class="Form__control" name="nombre" placeholder="Nombre">
+                        </div>
+                        <div class="Form__group">
+                            <select class="Form__control" id="tipos" name="tipo">
+                                <option value="-1">Selecciona un tipo de animal</option>
+                                <?php foreach ($this->listadoTipo as $key => $row): ?>
+                                    <option value="<?= $row->getTipo(); ?>"><?= $row->getTipo(); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="Form__group">
+                            <select class="Form__control" id="razas" name="raza">
+                                <option value="-1">Selecciona una raza</option>
+                            </select>
+                        </div>
+                        <div class="Form__group">
+                            <select class="Form__control" id="estados" name="estado">
+                                <option value="-1">Selecciona un estado</option>
+                                <?php foreach ($this->listadoEstado as $key => $row): ?>
+                                    <option value="<?= $row->getTipo(); ?>"><?= $row->getTipo(); ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="Form__group" id="estadoAbandonado"></div>
+                        <div class="Form__group">
+                            <textarea name="descripcion" class="Form__control" rows="10"
+                                      placeholder="Descripcion"></textarea>
+                        </div>
+                        <div class="Panel__footer Panel__footer--right">
+                            <input type="submit" class="btn btn-info">
+                        </div>
+                    </div>
+                    <div class="Grilla__xs--12 Grilla__sm--12 Grilla__md--12 Grilla__lg--12 Grilla__xl--12 Grilla__xxl--12">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

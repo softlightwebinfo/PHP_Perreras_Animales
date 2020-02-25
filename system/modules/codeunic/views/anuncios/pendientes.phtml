@@ -1,0 +1,16 @@
+<?php foreach ($this->_listadoPendientes['anuncios'] as $key => $row): ?>
+<div class="ALateral__container">
+    <div class="ALateral__foto">
+        <img src="<?= $row->getFoto(); ?>" alt="<?= $row->getReferencia(); ?>" class="ALateral__img">
+    </div>
+    <div class="ALateral__etiqueta"><b>Estado: </b><?=$row->getFk_estado()?></div>
+    <div class="ALateral__referencia"><b>Referencia: </b><?= $row->getReferencia(); ?></div>
+    <div class="ALateral__fecha"><b>Fecha entrada: </b><?= $row->getFecha_entrada(); ?></div>
+    <div class="ALateral__tipo"><b>Tipo: </b><?= $row->getTipo(); ?></div>
+    <div class="ALateral__raza"><b>Raza: </b><?= $row->getRaza(); ?></div>
+    <div class="ALateral__descripcion"><b>Descripción: </b><?= $row->getDescripcion(); ?></div>
+    <button type="button" class="ALateral__button ALateral__aceptar" data-code="<?= $row->getReferencia();?>">Aceptar</button>
+    <button type="button" class="ALateral__button ALateral__rechazar" data-code="<?= $row->getReferencia();?>">Rechazar</button>
+</div>
+
+<?php endforeach; ?>

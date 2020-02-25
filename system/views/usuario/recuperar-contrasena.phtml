@@ -1,0 +1,25 @@
+<div class="Boxes">
+    <div class="Boxes__top"></div>
+    <div class="Boxes__body">
+        <div class="Boxes__diagrama"></div>
+        <h1 class="Boxes__title">
+            <span class="Boxes__subtitle">Perreras</span>
+            Olvidaste la contraseña?
+            <span class="Boxes__subtitle Boxes__subtitle--msg">Escribe tu e-mail para reiniciar tu contraseña.</span>
+        </h1>
+        <div class="Boxes__content">
+            <form action="">
+                <div class="Form__group">
+                    <div class="Form__line">
+                        <span class="fa fa-envelope"></span>
+                        <input type="text" autocomplete="off" class="Form__control--modern" name="email" placeholder="Correo electronico" required="" autofocus="">
+                    </div>
+                </div>
+                <div class="Form__group text-center">
+                    <button type="submit" class="Boton Boton--raised-cyan">Recuperar mi contraseña</button>
+                </div>
+            </form>
+            <a class="Boxes__link" href="<?= base_url('usuario/recuperar-contrasena/') ?>">Iniciar sesión?</a>
+        </div>
+    </div>
+</div>
